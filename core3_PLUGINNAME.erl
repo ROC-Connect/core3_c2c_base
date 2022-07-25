@@ -1,5 +1,5 @@
 %build instructions for cenkins
--module('core3_PLUGINNAME').
+-module('core3_PLUGINBASE').
 
 -export([compile/2, test/2 , tagCreated/2]).
 

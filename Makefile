@@ -1,5 +1,5 @@
-PROJECT = core3_PLUGINNAME
-PROJECT_DESCRIPTION = Core3 PLUGINNAME Adapter
+PROJECT = core3_PLUGINBASE
+PROJECT_DESCRIPTION = Core3 PLUGINBASE Adapter
 COMMIT_ID   = $(shell git log -n 1 |head -n 1| awk '/commit/ {print $$2;}')
 COMMIT_DATE = $(shell git log -n 1 | awk '/Date: / {$$1="";gsub(/^ /, "");print}')
 BRANCH      = $(shell git describe --all | awk -F"/" '{gsub(/remotes|origin|heads|\//,"");print}')
