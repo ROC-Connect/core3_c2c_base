@@ -1,2 +1,5 @@
 # core3_c2c_base
-base template for make c2c
+
+this is the base template used for make c2c
+
+NAME=mystrom make c2c 
