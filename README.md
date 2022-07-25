@@ -3,3 +3,5 @@
 this is the base template used for make c2c, which should be used to start a fresh c2c repo
 
 NAME=mystrom make c2c 
+
+ATTENTION this repo is public do not put sensitive information here
