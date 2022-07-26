@@ -42,7 +42,9 @@ c2c:
 	$(shell sed -i s/PLUGINBASE/$(PLUGINBASE)/g Makefile)
 #create and populate src folder	
 	$(info --> fetching source templates)
-	$(shell curl $(BASE) -o src/$(PLUGINNAME).erl)
+	$(shell mkdir -p src)
+	$(shell curl $(BASE) -o src/$(PLUGINBASE).erl)
+
 	$(shell sed -i s/PLUGINBASE/$(PLUGINBASE)/g src/$(PLUGINBASE).erl)
 	
 	$(info done with folder preparation enjoy writing code)
@@ -51,5 +53,5 @@ c2c:
 
 
 clean:
-	$(info removing Makefile erlang.mk $(PLUGINNAME).erl)
-	$(shell rm Makefile erlang.mk $(PLUGINNAME).erl)	
+	$(info removing Makefile erlang.mk $(PLUGINNAME).erl and src)
+	$(shell rm -rf Makefile erlang.mk $(PLUGINNAME).erl src)	
