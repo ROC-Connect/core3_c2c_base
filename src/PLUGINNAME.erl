@@ -2,10 +2,10 @@
 %%% @author roc-connect
 %%% @copyright (C) 2022, ROC-Connect
 %%% @doc
-%%% PLUGINNAME integration api 
+%%% PLUGINBASE integration api 
 %%% @end
 %%%-------------------------------------------------------------------
--module(PLUGINNAME).
+-module(PLUGINBASE).
 -author("rocconnect").
 -include("rtrace.hrl").
 -define(BASE_URL, "").
@@ -27,7 +27,7 @@ access_token_granted(HostName, SubId, IntegrationId, Channel, InstanceId,
     _AccessTokenObject) ->
   spawn(
     fun() ->
-      %case PLUGINNAME_api:read_user(InstanceId) of
+      %case PLUGINBASE:read_user(InstanceId) of
        % #{<<"homes">> := Homes} ->
         %  lists:foreach(
          %   fun(Home) ->

@@ -2,7 +2,8 @@
 MF="https://raw.githubusercontent.com/ROC-Connect/core3_c2c_base/main/Makefile"
 BF="https://raw.githubusercontent.com/ROC-Connect/core3_c2c_base/main/core3_PLUGINNAME.erl"
 EF="https://raw.githubusercontent.com/ROC-Connect/core3_c2c_base/main/erlang.mk"
-
+#src files
+BASE="https://raw.githubusercontent.com/ROC-Connect/core3_c2c_base/main/src/PLUGINNAME.erl"
 
 
 PLUGINNAME=$(shell basename $(shell pwd))
@@ -41,8 +42,8 @@ c2c:
 	$(shell sed -i s/PLUGINBASE/$(PLUGINBASE)/g Makefile)
 #create and populate src folder	
 	$(info --> fetching source templates)
-	
-
+	$(shell curl $(BASE) -o src/$(PLUGINNAME).erl)
+	$(shell sed -i s/PLUGINBASE/$(PLUGINBASE)/g src/$(PLUGINBASE).erl)
 	
 	$(info done with folder preparation enjoy writing code)
 	
