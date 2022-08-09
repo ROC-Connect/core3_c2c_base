@@ -4,6 +4,7 @@ BF="https://raw.githubusercontent.com/ROC-Connect/core3_c2c_base/main/core3_PLUG
 EF="https://raw.githubusercontent.com/ROC-Connect/core3_c2c_base/main/erlang.mk"
 #src files
 BASE="https://raw.githubusercontent.com/ROC-Connect/core3_c2c_base/main/src/PLUGINNAME.erl"
+API="https://raw.githubusercontent.com/ROC-Connect/core3_c2c_base/main/src/PLUGINNAME_api.erl"
 
 
 PLUGINNAME=$(shell basename $(shell pwd))
@@ -44,9 +45,9 @@ c2c:
 	$(info --> fetching source templates)
 	$(shell mkdir -p src)
 	$(shell curl $(BASE) -o src/$(PLUGINBASE).erl)
-
 	$(shell sed -i s/PLUGINBASE/$(PLUGINBASE)/g src/$(PLUGINBASE).erl)
-	
+	$(shell curl $(API) -o src/$(PLUGINBASE)_api.erl)
+	$(shell sed -i s/PLUGINBASE/$(PLUGINBASE)/g src/$(PLUGINBASE)_api.erl)
 	$(info done with folder preparation enjoy writing code)
 	
 	

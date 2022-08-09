@@ -27,7 +27,7 @@ access_token_granted(HostName, SubId, IntegrationId, Channel, InstanceId,
     _AccessTokenObject) ->
   spawn(
     fun() ->
-      %case PLUGINBASE:read_user(InstanceId) of
+      case PLUGINBASE:read_user(InstanceId) of
        % #{<<"homes">> := Homes} ->
         %  lists:foreach(
          %   fun(Home) ->
@@ -37,3 +37,5 @@ access_token_granted(HostName, SubId, IntegrationId, Channel, InstanceId,
         %_ -> ok
       %end
     end).
+
+    
